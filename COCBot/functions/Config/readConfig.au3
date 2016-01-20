@@ -148,6 +148,29 @@ Func readConfig() ;Reads config and sets it to the variables
 		$iChkRestartSearchLimit = IniRead($config, "search", "ChkRestartSearchLimit", "0")
 		$iRestartSearchlimit = IniRead($config, "search", "RestartSearchLimit", "15")
 
+		;Hero Filter Settings.
+		$iSkipCentreDE = IniRead($config, "search", "SkipCentreDE", "0")
+		$iSkipUndetectedDE = IniRead($config, "search", "SkipUndetectedDE", "0")
+		$iCmbMeetGEHero = IniRead($config, "search", "ABMeetGEHero", "2")
+		$iChkMeetDEHero = IniRead($config, "search", "ABMeetDEHero", "0")
+		$iChkMeetTrophyHero = IniRead($config, "search", "ABMeetTrophyHero", "0")
+		$iChkMeetTHHero = IniRead($config, "search", "ABMeetTHHero", "0")
+		$iChkMeetTHOHero = IniRead($config, "search", "ABMeetTHOHero", "0")
+		$iChkWeakBaseHero = IniRead($config, "search", "ABWeakBaseHero", "0")
+		$iChkMeetOneHero = IniRead($config, "search", "ABMeetOneHero", "0")
+
+		$iMinGoldHero = IniRead($config, "search", "ABsearchGoldHero", "80000")
+		$iMinElixirHero = IniRead($config, "search", "ABsearchElixirHero", "80000")
+		$iMinGoldPlusElixirHero = IniRead($config, "search", "ABsearchGoldPlusElixirHero", "160000")
+		$iMinDarkHero = IniRead($config, "search", "ABsearchDarkHero", "0")
+		$iMinTrophyHero = IniRead($config, "search", "ABsearchTrophyHero", "0")
+		$iCmbTHHero = IniRead($config, "search", "ABTHLevelHero", "0")
+		$iCmbWeakMortarHero = IniRead($config, "search", "ABWeakMortarHero", "5")
+		$iCmbWeakWizTowerHero = IniRead($config, "search", "ABWeakWizTowerHero", "4")
+
+		$LBBKFilter = IniRead($config, "search", "LBBKFilter", "1")
+		$LBAQFilter = IniRead($config, "search", "LBAQFilter", "1")
+
 		;Attack Basics Settings-------------------------------------------------------------------------
 		$iChkDeploySettings[$DB] = IniRead($config, "attack", "DBDeploy", "3")
 		$iCmbUnitDelay[$DB] = IniRead($config, "attack", "DBUnitD", "5")
@@ -451,7 +474,10 @@ Func readConfig() ;Reads config and sets it to the variables
 		$LightningSpellComp = IniRead($config, "Spells", "LightningSpell", "0")
 		$RageSpellComp = IniRead($config, "Spells", "RageSpell", "0")
 		$HealSpellComp = IniRead($config, "Spells", "HealSpell", "0")
+		$JumpSpellComp  = IniRead($config, "Spells", "JumpSpell", "0")
+		$FreezeSpellComp  = IniRead($config, "Spells", "FreezeSpell", "0")
 		$PoisonSpellComp = IniRead($config, "Spells", "PoisonSpell", "0")
+		$EarthquakeSpellComp  = IniRead($config, "Spells", "EarthquakeSpell", "0")
 		$HasteSpellComp = IniRead($config, "Spells", "HasteSpell", "0")
 		$iTotalCountSpell = IniRead($config, "Spells", "SpellFactory", "0")
 
@@ -612,6 +638,18 @@ Func readConfig() ;Reads config and sets it to the variables
 		$ichkEarthquakeSpell[$LB] = IniRead($config, "attackCSV", "ABEarthquakeSpell", "0")
 		$ichkHasteSpell[$DB] = IniRead($config, "attackCSV", "DBHasteSpell", "0")
 		$ichkHasteSpell[$LB] = IniRead($config, "attackCSV", "ABHasteSpell", "0")
+
+		;Others Settings--------------------------------------------------------------------------
+		$ichkSwitchDonate = IniRead($config, "Others", "SwitchDonate", "0")
+		$ichkMultyFarming = IniRead($config, "Others", "MultyFarming", "0")
+		$ichkHideTaskBar = IniRead($config, "Others", "HideTaskBarIcon", "0")
+
+		$ichkSmartLightSpell = IniRead($config, "Others", "SmartLightSpell", "0")
+		$ichkTrainLightSpell = IniRead($config, "Others", "TrainLightSpell", "0")
+		$itxtMinDark = IniRead($config, "Others", "txtMinDark", "1000")
+		$ichkDrillZapTH = IniRead($config, "Others", "chkDrillZapTH", "0")
+		$useFFBarchST = IniRead($config, "Others", "ChkSTFFBarch", "0")
+		$percentCollectors = IniRead($config, "Others", "txtTHpercentCollectors", "80")
 
 
 	Else

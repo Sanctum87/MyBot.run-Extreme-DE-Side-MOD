@@ -529,7 +529,7 @@ Global $ArmyComp
 
 ;Spell Settings
 Global $DonPois = 0, $DonEart = 0, $DonHast = 0
-Global $LightningSpellComp = 0, $HealSpellComp = 0, $RageSpellComp = 0, $PoisonSpellComp = 0, $HasteSpellComp = 0
+Global $LightningSpellComp = 0, $HealSpellComp = 0, $RageSpellComp = 0, $JumpSpellComp = 0, $FreezeSpellComp = 0, $PoisonSpellComp = 0, $EarthquakeSpellComp = 0, $HasteSpellComp = 0
 Global $CurLightningSpell = 0, $CurHealSpell = 0, $CurRageSpell = 0, $CurJumpSpell = 0, $CurFreezeSpell = 0, $CurPoisonSpell = 0, $CurHasteSpell = 0, $CurEarthSpell = 0
 Global $iTotalCountSpell = 0
 Global $TotalSFactory = 0
@@ -933,3 +933,37 @@ $gui2open = 0
 Global $iDeadBase75percent = 1
 Global $iDeadBase75percentStartLevel = 4
 
+;Multy Farming
+Global $ichkSwitchDonate
+Global $ichkMultyFarming
+
+;ZAp Drill
+Global $ichkSmartLightSpell
+global $ichkTrainLightSpell
+Global $iDrills[4][4] = [[-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1], [-1, -1, -1, -1]] ; [LocX, LocY, BldgLvl, Quantity=filled by other functions]
+Global $smartZapGain = 0
+Global $NumLTSpellsUsed = 0
+Global $ichkDrillZapTH
+Global $itxtMinDark
+Global $txtMinDark
+Global $iLTSpellCost, $LTSCost , $LTSpellCost
+
+;SettingSwitch
+Global $icmbRecSetting
+Global $cmbRecSetting
+Global $cmbSearchMode
+Global $cmbDBMeetGE
+Global $cmbABMeetGE
+Global $cmbABMeetGEHero
+Global $cmbAttackTHType
+Global $cmbTHSpellType
+Global $cmbAttackbottomType
+Global $cmbDetectTrapedTH
+Global $cmbTroopComp
+
+;Hero Healing Filter
+Global $LBsave[17], $LBHeroFilter, $LBAQFilter, $LBBKFilter, $iSkipCentreDE, $iSkipUndetectedDE, $DECorepix = 15
+Global $LBBKEQFilter
+Global $iCmbMeetGEHero, $iChkMeetDEHero, $iChkMeetTrophyHero, $iChkMeetTHHero, $iChkMeetTHOHero, $iChkWeakBaseHero, $iChkMeetOneHero, $iEnableAfterCountHero, $iMinGoldHero
+Global $iMinElixirHero, $iMinGoldPlusElixirHero,$iMinDarkHero, $iMinTrophyHero, $iCmbTHHero, $iCmbWeakMortarHero, $iCmbWeakWizTowerHero, $iMaxTHHero
+Global $THString

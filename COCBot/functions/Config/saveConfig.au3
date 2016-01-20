@@ -203,7 +203,68 @@ Func saveConfig() ;Saves the controls settings to the config
 	EndIf
 	IniWrite($config, "search", "RestartSearchLimit", GUICtrlRead($TxtRestartSearchlimit))
 
+;Hero Filters
+	IniWrite($config, "search", "SkipCentreDE", _GUICtrlComboBox_GetCurSel($cmbSkipCentreDE))
+	IniWrite($config, "search", "SkipUndetectedDE", _GUICtrlComboBox_GetCurSel($cmbSkipUndetectedDE))
 
+	IniWrite($config, "search", "ABMeetGEHero", _GUICtrlComboBox_GetCurSel($cmbABMeetGEHero))
+
+	If GUICtrlRead($chkABMeetDEHero) = $GUI_CHECKED Then
+		IniWrite($config, "search", "ABMeetDEHero", 1)
+	Else
+		IniWrite($config, "search", "ABMeetDEHero", 0)
+	EndIf
+
+	If GUICtrlRead($chkABMeetTrophyHero) = $GUI_CHECKED Then
+		IniWrite($config, "search", "ABMeetTrophyHero", 1)
+	Else
+		IniWrite($config, "search", "ABMeetTrophyHero", 0)
+	EndIf
+
+	If GUICtrlRead($chkABMeetTHHero) = $GUI_CHECKED Then
+		IniWrite($config, "search", "ABMeetTHHero", 1)
+	Else
+		IniWrite($config, "search", "ABMeetTHHero", 0)
+	EndIf
+
+	If GUICtrlRead($chkABMeetTHOHero) = $GUI_CHECKED Then
+		IniWrite($config, "search", "ABMeetTHOHero", 1)
+	Else
+		IniWrite($config, "search", "ABMeetTHOHero", 0)
+	EndIf
+
+	If GUICtrlRead($chkABWeakBaseHero) = $GUI_CHECKED Then
+		IniWrite($config, "search", "ABWeakBaseHero", 1)
+	Else
+		IniWrite($config, "search", "ABWeakBaseHero", 0)
+	EndIf
+
+	If GUICtrlRead($chkABMeetOneHero) = $GUI_CHECKED Then
+		IniWrite($config, "search", "ABMeetOneHero", 1)
+	Else
+		IniWrite($config, "search", "ABMeetOneHero", 0)
+	EndIf
+
+	IniWrite($config, "search", "ABsearchGoldHero", GUICtrlRead($txtABMinGoldHero))
+	IniWrite($config, "search", "ABsearchElixirHero", GUICtrlRead($txtABMinElixirHero))
+	IniWrite($config, "search", "ABsearchGoldPlusElixirHero", GUICtrlRead($txtABMinGoldPlusElixirHero))
+	IniWrite($config, "search", "ABsearchDarkHero", GUICtrlRead($txtABMinDarkElixirHero))
+	IniWrite($config, "search", "ABsearchTrophyHero", GUICtrlRead($txtABMinTrophyHero))
+	IniWrite($config, "search", "ABTHLevelHero", _GUICtrlComboBox_GetCurSel($cmbABTHHero))
+	IniWrite($config, "search", "ABWeakMortarHero", _GUICtrlComboBox_GetCurSel($cmbABWeakMortarHero))
+	IniWrite($config, "search", "ABWeakWizTowerHero", _GUICtrlComboBox_GetCurSel($cmbABWeakWizTowerHero))
+
+	If GUICtrlRead($chkLBBKFilter) = $GUI_CHECKED Then
+		IniWrite($config, "search", "LBBKFilter", 1)
+	Else
+		IniWrite($config, "search", "LBBKFilter", 0)
+	EndIf
+
+	If GUICtrlRead($chkLBAQFilter) = $GUI_CHECKED Then
+		IniWrite($config, "search", "LBAQFilter", 1)
+	Else
+		IniWrite($config, "search", "LBAQFilter", 0)
+	EndIf
 	;Attack Basic Settings-------------------------------------------------------------------------
 	IniWrite($config, "attack", "DBDeploy", _GUICtrlComboBox_GetCurSel($cmbDBDeploy))
 	IniWrite($config, "attack", "DBUnitD", _GUICtrlComboBox_GetCurSel($cmbDBUnitDelay))
@@ -878,7 +939,10 @@ Func saveConfig() ;Saves the controls settings to the config
 	IniWrite($config, "Spells", "LightningSpell", GUICtrlRead($txtNumLightningSpell))
 	IniWrite($config, "Spells", "RageSpell", GUICtrlRead($txtNumRageSpell))
 	IniWrite($config, "Spells", "HealSpell", GUICtrlRead($txtNumHealSpell))
+	IniWrite($config, "Spells", "JUmpSpell", GUICtrlRead($txtNumJumpSpell))
+	IniWrite($config, "Spells", "FreezeSpell", GUICtrlRead($txtNumFreezeSpell))
 	IniWrite($config, "Spells", "PoisonSpell", GUICtrlRead($txtNumPoisonSpell))
+	IniWrite($config, "Spells", "EarthquakeSpell", GUICtrlRead($txtNumEarthquakeSpell))
 	IniWrite($config, "Spells", "HasteSpell", GUICtrlRead($txtNumHasteSpell))
 	IniWrite($config, "Spells", "SpellFactory", GUICtrlRead($txtTotalCountSpell))
 
@@ -1490,7 +1554,41 @@ Func saveConfig() ;Saves the controls settings to the config
 		IniWrite($config, "attackCSV", "EnableScriptAB", 1)
 	Else
 		IniWrite($config, "attackCSV", "EnableScriptAB", 0)
+   EndIf
+
+	 ;Others Settings--------------------------------------------------------------------------
+	If GUICtrlRead($chkSwitchDonate) = $GUI_CHECKED Then
+		IniWrite($config, "Others", "SwitchDonate", 1)
+	Else
+		IniWrite($config, "Others", "SwitchDonate", 0)
 	EndIf
+
+	If GUICtrlRead($chkMultyFarming) = $GUI_CHECKED Then
+		IniWrite($config, "Others", "MultyFarming", 1)
+	Else
+		IniWrite($config, "Others", "MultyFarming", 0)
+	 EndIf
+
+   ;ichkSmartLightSpell DE Smart Lightning Zap
+	If GUICtrlRead($chkSmartLightSpell) = $GUI_CHECKED Then
+		IniWrite($config, "Others", "SmartLightSpell", "1")
+	Else
+		IniWrite($config, "Others", "SmartLightSpell", "0")
+	EndIf
+	If GUICtrlRead($chkTrainLightSpell) = $GUI_CHECKED Then
+		IniWrite($config, "Others", "TrainLightSpell", "1")
+	Else
+		IniWrite($config, "Others", "TrainLightSpell", "0")
+	EndIf
+
+
+	IniWrite($config, "Others", "txtMinDark", GUICtrlRead($txtMinDark))
+
+	If GUICtrlRead($chkDrillZapTH) = $GUI_CHECKED Then
+		IniWrite($config, "Others", "chkDrillZapTH", "1")
+	Else
+		IniWrite($config, "Others", "chkDrillZapTH", "0")
+	 EndIf
 
 	If $hFile <> -1 Then FileClose($hFile)
 

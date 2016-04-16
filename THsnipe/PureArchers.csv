@@ -52,10 +52,5 @@ Arch  | 5| 5|20|20|  500|  600|                                            |rele
 Mini  | 5| 5| 2| 2| 1000| 1200|                                            |deploys 10 minions
 Wiza  | 3| 3| 2| 2|  800| 1000|                                            |releases 6 wizards
 WAIT  |  |  |  |  |     |20000|                                            |
-Lspell|  |  |  |  |     |     |                                            |launch lighting spell
-Lspell|  |  |  |  |     |     |                                            |launch lighting spell
-Lspell|  |  |  |  |     |     |                                            |launch lighting spell
-Lspell|  |  |  |  |     |     |                                            |launch lighting spell
-Lspell|  |  |  |  |     |     |                                            |launch lighting spell
 Text  |  |  |  |  |     |     |~Finished Attacking, waiting to finish      |
 WAIT  |  |  |  |  |     |20000|                                            |
